@@ -302,7 +302,7 @@ def find_css_problems(sheets):
                         property_name = declaration.name[8:] # remove -webkit- prefix
                         has_equivalents = False
                         for subtest_declaration in rule.declarations:
-                            if subtest_declaration.name is property_name or subtest_declaration.name is '-moz-'+property_name:
+                            if subtest_declaration.name == property_name or subtest_declaration.name == '-moz-'+property_name:
                                 has_equivalents = True
                         if has_equivalents:
                             continue
